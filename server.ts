@@ -39,12 +39,12 @@ async function startServer() {
       io.emit("songSelected", data); // Broadcast to all clients
     });
 
-    // Handle scroll syncing (unchanged)
+    // Handle scroll syncing
     socket.on("syncScroll", (scrollTop: number) => {
       io.emit("scrollTo", scrollTop);
     });
 
-    // Handle rehearsal quit:
+    // Handle rehearsal quit
     socket.on("quitRehearsal", () => {
       console.log("Rehearsal ended");
       currentSongData = null; // Reset the current song
@@ -56,9 +56,9 @@ async function startServer() {
     });
   });
 
-  const port = process.env.PORT || 3000;
+  const port = parseInt(process.env.PORT || "3000", 10);
   httpServer.listen(port, () => {
-    console.log(`> Server ready on http://localhost:${port}`);
+    console.log(`> Server ready on http://0.0.0.0:${port}`);
   });
 }
 
