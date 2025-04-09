@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "dev": "ts-node index.ts",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,13 +19,12 @@
   },
   "homepage": "https://github.com/guyhaliva123/Node-Server#readme",
   "description": "",
+  "dependencies": {
+    "socket.io": "^4.8.1"
+  },
   "devDependencies": {
     "@types/node": "^22.14.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
-  },
-  "dependencies": {
-    "next": "^15.2.5",
-    "socket.io": "^4.8.1"
   }
 }
